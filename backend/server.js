@@ -9,6 +9,7 @@ import connectDB from './config/db.js';
 import errorHandler from './middleware/errorHandler.js';
 
 import authRoutes from './routes/authRoutes.js';
+import documentRoutes from './routes/documentRoutes.js';
 
 
 //ES6 module_dirname alternative
