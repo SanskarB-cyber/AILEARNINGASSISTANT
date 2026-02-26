@@ -10,12 +10,14 @@ import errorHandler from './middleware/errorHandler.js';
 
 import authRoutes from './routes/authRoutes.js';
 import documentRoutes from './routes/documentRoutes.js';
+import flashcardRoutes from './routes/flashcardRoutes.js';
+import aiRoutes from './routes/aiRoutes.js';
 
 
 //ES6 module_dirname alternative
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = path.dirname(__filename); 
 
 //Initialize Express app
 const app = express();
@@ -42,12 +44,14 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 //Routes
 app.use('/api/auth', authRoutes) 
 app.use('/api/documents', documentRoutes)
+app.use('/api/flashcards', flashcardRoutes)
+app.use('/api/ai', aiRoutes)
 
 app.use(errorHandler);
 
 
 //404 Handler
-app.use((req, res) => {
+app.use((req, res) => { 
     res.status(404).json({ 
         success: false,
         error: 'Route not found',
