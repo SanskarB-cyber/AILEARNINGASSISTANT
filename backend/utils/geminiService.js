@@ -3,12 +3,16 @@ import { GoogleGenAI } from "@google/genai";
 
 dotenv.config();
 
-const ai = new GoogleGenAI({apiKey: process.env.GEMINI_API_KEY});
+const apiKey = process.env.GEMINI_API_KEY;
 
-if (!process.env.GEMINI_API_KEY) {
+if (!apiKey) {
     console.error('FATAL ERROR: GEMINI_API_KEY is not set in the environment variables.');
-    process.exit(1);
+    // In production, we might want to exit, but in dev we can just log a warning
+    // or let individual calls fail gracefully.
+    // However, the current code structure expects 'ai' to be available.
 }
+
+const ai = apiKey ? new GoogleGenAI(apiKey) : null;
 
 
 /**
