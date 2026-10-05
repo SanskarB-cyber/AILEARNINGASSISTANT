@@ -1,0 +1,10 @@
+{
+  "name": "ai-learning-assistant-root",
+  "version": "1.0.0",
+  "description": "Root configuration for AI Learning Assistant",
+  "scripts": {
+    "dev": "npm run dev --prefix frontend/ai-learning-assistant",
+    "backend": "npm run dev --prefix backend",
+    "start-all": "npm run dev --prefix backend & npm run dev --prefix frontend/ai-learning-assistant"
+  }
+}

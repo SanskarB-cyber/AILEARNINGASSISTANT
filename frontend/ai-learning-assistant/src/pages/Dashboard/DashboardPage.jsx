@@ -46,9 +46,11 @@ const DashboardPage = () => {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
         <div className="text-center">
-          <p className="text-slate-600 font-medium mb-4">Your session has expired or data failed to load.</p>
-          <button 
-            onClick={() => navigate('/login')}
+          <p className="text-slate-600 font-medium mb-4">
+            Your session has expired or data failed to load.
+          </p>
+          <button
+            onClick={() => navigate("/login")}
             className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold rounded-xl transition-all"
           >
             Go to Login Page

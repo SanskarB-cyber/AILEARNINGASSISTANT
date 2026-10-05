@@ -97,7 +97,30 @@ const DocumentListPage = () => {
     return <div>renderContent</div>;
   };
 
-  return <div>DocumentListPage</div>;
+  return (
+    <div className="">
+      {/*Subtle background pattern */}
+      <div className="" />
+
+      <div className="">
+        {/* Header */}
+        <div className="">
+          <div>
+            <h1 className="">My Documents</h1>
+            <p className="">Manage and organize your learning materials</p>
+          </div>
+          {documents.length > 0 && (
+            <Button onClick={() => setIsUploadModalOpen(true)}>
+              <Plus className="" strokeWidth={2.5} />
+              Upload Document
+            </Button>
+          )}
+        </div>
+
+        {renderContent()}
+      </div>
+    </div>
+  );
 };
 
 export default DocumentListPage;

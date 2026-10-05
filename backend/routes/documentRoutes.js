@@ -3,7 +3,7 @@ import {
     uploadDocument,
     getDocuments,
     getDocument,
-    deleteDocument,
+    deleteDocument, 
     
 } from '../controllers/documentController.js';
 import protect from '../middleware/auth.js';
